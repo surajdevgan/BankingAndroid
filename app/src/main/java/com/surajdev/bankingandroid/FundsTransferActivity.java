@@ -47,10 +47,11 @@ public class FundsTransferActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sendmoney = Double.parseDouble(transamt.getText().toString());
 
 if(remainingBalance>sendmoney)
 {
-    sendmoney = Double.parseDouble(transamt.getText().toString());
+
     remainingBalance -= sendmoney;
     txtreminingblance.setText("Your Remaining "+remainingBalance);
 
