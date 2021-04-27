@@ -82,7 +82,7 @@ else {
                 transamt.setVisibility(VISIBLE);
                 edtpayeeaccount.setVisibility(View.GONE);
 
-                //    foundaccount = true;
+                    foundaccount = true;
                 txtaccountdetails.setText("Name: "+ba.name+"\n"+"Account No: "+ba.accountNumber+"\n"+"Account Type: "+ba.accountType+"\n"+"Gender: "+ba.genderType+"\n"+"Age: "+ba.age);
 
                 Toast.makeText(this, "Account Found", Toast.LENGTH_SHORT).show();
@@ -90,6 +90,12 @@ else {
 
             }
 
+
+        }
+
+        if(!foundaccount)
+        {
+            Toast.makeText(this, "No Account Found! Please Enter Again", Toast.LENGTH_SHORT).show();
 
         }
 

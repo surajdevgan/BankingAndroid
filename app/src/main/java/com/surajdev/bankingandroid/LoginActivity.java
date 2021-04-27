@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText AccountId, AccountPassword;
+    boolean userfound = false;
 
     ArrayList<User> userList = new ArrayList<>();
 
@@ -55,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
             if(ba.accountNumber == enteredAccountNumber && ba.password.equals(enteredPassword))
             {
 
+userfound = true;
 //Create the bundle
                 Bundle bundle = new Bundle();
 //Add your data from getFactualResults method to bundle
@@ -67,10 +70,21 @@ public class LoginActivity extends AppCompatActivity {
                 i.putExtras(bundle);
                 i.putExtra("QuestionListExtra", userList);
                 startActivity(i);
+                finish();
 
                 break;
 
             }
+
+
+
+
+        }
+
+        if(!userfound)
+        {
+
+            Toast.makeText(this, "Invalid Account Or Password", Toast.LENGTH_SHORT).show();
 
 
 
